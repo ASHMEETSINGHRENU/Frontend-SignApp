@@ -1,0 +1,76 @@
+/* upload.css */
+
+.pdf-signer-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.pdf-signer-container h2 {
+  text-align: center;
+  color: #ff9900;
+  margin-bottom: 30px;
+}
+
+.pdf-signer-container input[type="file"] {
+  display: block;
+  margin: 0 auto 20px;
+  font-size: 16px;
+}
+
+.pdf-signer-container input[type="text"],
+.pdf-signer-container select {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: calc(50% - 20px);
+}
+
+.pdf-signer-container select {
+  margin-left: 10px;
+}
+
+.pdf-wrapper {
+  position: relative;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.signature {
+  width: 100%;
+  position: absolute;
+  padding-top: 50px;
+  padding-left: 150px;
+  font-size: 24px;
+  color: teal;
+  cursor: move;
+  user-select: none;
+}
+
+.download-button {
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffa000;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #fb8c00;
+}
