@@ -7,26 +7,28 @@ const Login = ({ setUser }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setUser(data.user);
-        navigate("/pdf-signer"); 
-        alert("Login successful");
-      } else {
-        alert(data.message || "Login failed");
-      }
-    } catch (error) {
-      console.error(error);
+ const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch('https://backendsignapp.vercel.app/api/auth/login', { // 👈 update this URL
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      setUser(data.user);
+      navigate("/pdf-signer");
+      alert("Login successful");
+    } else {
+      alert(data.message || "Login failed");
     }
-  };
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Network or server error");
+  }
+};
+
 
   return (
     <div className="login-container">
